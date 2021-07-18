@@ -205,15 +205,34 @@ class Myobj { //this = Myobj
     }
 }
 
-class Myobj2 extends Myobj2 {
-    constructor(el){
-         super(el);
+document.addEventListener('DOMContentLoaded',function(){
+    const el = document.querySelector('animation__title');
+    const str = el.innerHTML.trim().split(""); //elの値を配列で格納
+        }
+      el.innerHTML = str.reduce(acc,curr) =>{
+        curr = curr.replace(/\s+/, '&nbsp;');
+        return `${acc}<span class ="char">${curr}</span>`
+     },"");
+})
+
+class TextAnimation {  //クラスを定義　
+    construtor(el){
+        this.el = document.queryselector(el);
+        this.chars = this.el.innerHTML.trim().split("");
+        this.el.innerHTML = this._splitText();
+    }
+     _splitText(){ //プライベートメソッド　クラスの中でしか使用できない
+       return this.chars.reduce((acc, curr)=>{
+          curr = curr.replace(/\s+/, '&nbsp;');
+          return `${acc}<span class ="char">${curr}</span>`
+       },"")
+    }
+    animate(){　       this.el.classList.toggle('inview');
     }
 }
-const child = document.querySelector('.child');
-const io = function(){
-    
-}
-const io =new IntersectionObserver 
-io.observe(child){    
-}
+setTimeout(()=> { //animationの時差を1秒に指定
+    ta.animate();
+    ta2.animate();
+},1000);
+const ta = new TextAnimation('.animate__title');
+const ta2 = new TextAnimation('.animate__title2'); //TextAnimationクラスをインスタス化
