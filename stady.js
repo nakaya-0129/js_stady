@@ -137,10 +137,11 @@ const = [1,2,3,4,5]
 arry.reduce(function(accu,curr){
     console.log(accu,curr);
     return accu + curr;
-},10)　//第二引数に初期値を指定　accu = 10となる
+},10)　//第二引数に初期値を指定
 
 const str = 'animation';
-const strArry = str.split('');
+const strArry = str.split(''); //文字列から配列に置き換える
+console.log(strArry)
 
 strArry.reduce((accu,curr)=>{
     return  accu + '<' + curr + '>';
@@ -236,3 +237,71 @@ setTimeout(()=> { //animationの時差を1秒に指定
 },1000);
 const ta = new TextAnimation('.animate__title');
 const ta2 = new TextAnimation('.animate__title2'); //TextAnimationクラスをインスタス化
+
+
+const arry =[1,2,3,4,5,];
+
+arry.reduce(function(accu,curr){ //reduce:前のループの戻り値が次のループのaccuに渡ってくる
+    console.log(accu,curr);　　//currには配列の値が渡ってくる
+    return accu + curr;
+},10);
+hello(function(){
+    console.log('nakaya');
+    }) 
+hello(()=>'nakaya';) //アロー関数で省略
+
+const person = {
+    name:['nakaya','ko'],
+    age: 36,
+    gender: 'male',
+    interests: {
+        sports: 'soccer',
+        music: 'piano'
+    },
+    getFullName: function(){
+        console.log(this.name[0] + this.name[1]);
+    }
+};
+
+person.age = 37;
+console.log(person.age);
+person.getFullName(); //key情報に関数をあてる
+
+const arry = [1,2,3,4,5];
+
+for(let i in arry){
+    console.log(i, arry[i]);  //添字がわたる
+}
+
+for(let v of arry){
+    console.log(v);　　//値がわたる
+}
+
+const todos = [  //配列でオブジェクを指定する
+    {
+       id: 1,
+       title: 'Go to school',
+       completed: true
+    }, 
+    {
+       id: 1,
+       title: 'Go to museum',
+       completed: true
+    },
+    {
+       id: 1,
+       title: 'Go shopping',
+       completed: true
+    },
+ {
+       id: 1,
+       title: 'Go to school',
+       completed: false
+    }
+for(let todo of todos){ //配列のオブジェクトをループ
+    if(todo.completed === true){
+    console.log(todo.title); //オブジェクトのタイトルを取得
+    }
+}
+
+]
