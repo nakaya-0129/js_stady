@@ -303,5 +303,35 @@ for(let todo of todos){ //配列のオブジェクトをループ
     console.log(todo.title); //オブジェクトのタイトルを取得
     }
 }
-
 ]
+const child = document.querySelector('.child');
+const cb = function(entries,observer){
+    entries.foreach(entry =>{
+       if(entry.isIntersecting){
+           console.log('inview'); 
+           entry.target.classList.add('inview');
+          //observer.unobserve(entry.target);
+           entry.target.classList.remove('inview');
+           }else{
+           console.log('out view')
+          }
+    });
+    alert('intersecting');
+}
+const options = {
+   root: null,
+   rootMargin: "-300px, 0px 0px 0px",　//rootmarginはpxか％を使用する
+   threshold: [0, 0.5, 1] //見え方の制御
+
+};
+const io = new IntersectionObserver(cb);
+io.observe(child);
+io.observe(child1);
+io.observe(child2);
+
+
+
+
+
+
+

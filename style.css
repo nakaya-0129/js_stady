@@ -1,0 +1,32 @@
+button.mobile__menu__icon{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor:pointer;
+}
+button.mobile__menu__icon span{
+  background-color: black;
+  width: 35px;
+  height:2px;
+  display:block;
+  margin-bottom:9px;
+  transition: transform 0.7s;
+}
+button.mobile__menu__icon span:last-child{
+  margin-bottom: 0;
+}
+
+.menu__open .mobile__menu__icon span:first-child{
+   transition-delay: 70ms;
+   transform: translateY(11px) rotate(135deg);
+}
+.menu__open .mobile__menu__icon span:nth-child(2){
+   transition-delay: 0s;
+   transform: translateX(-18px) scaleX(0);
+
+}    
+.menu__open .mobile__menu__icon span:last-child{
+   transition-delay: 70ms;
+   transform: translateY(-11px) rotate(-135deg);
+
+}    
